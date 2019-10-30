@@ -2,12 +2,21 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-    <key>NSPhotoLibraryUsageDescription</key>
-    <string>Feedly is requesting access to your phone's photo library</string>
-    <key>NSCameraUsageDescription</key>
-    <string>Feedly is requesting access to your phone's camera</string>
-    <key>NSMicrophoneUsageDescription</key>
-    <string>Feedly is requesting access to your phone's microphone</string>
+    <key>io.flutter.embedded_views_preview</key>
+    <true/>
+	<key>NSLocationWhenInUseUsageDescription</key>
+    <string>To access your current location.</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>The app would like to use your location</string>
+
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Feedly is requesting access to your phone&apos;s photo library</string>
+	<key>NSCameraUsageDescription</key>
+
+	<string>Feedly is requesting access to your phone&apos;s camera</string>
+	<key>NSMicrophoneUsageDescription</key>
+
+	<string>Feedly is requesting access to your phone&apos;s microphone</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>

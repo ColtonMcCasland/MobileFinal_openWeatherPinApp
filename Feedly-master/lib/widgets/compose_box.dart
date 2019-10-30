@@ -29,7 +29,7 @@ class ComposeBox extends StatelessWidget {
               ),
               child: Padding(
                 padding: const EdgeInsets.symmetric(vertical: 10.0),
-                child: Text('Write somethinghere ....'),
+                child: Text('Write something here ....'),
               ),
             ),
           ),

@@ -1,8 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_feedly/pages/feed.dart';
-import 'package:flutter_feedly/pages/signup.dart';
+import 'package:flutter_feedly/pages/feedPage.dart';
+import 'package:flutter_feedly/pages/signupPage.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -38,7 +38,7 @@ class _LoginPageState extends State<LoginPage> {
       ));
       
       Navigator.push(context, MaterialPageRoute(builder: (ctx) {
-        return FeedPage();
+        return MainFeedPage();
       }));
       
     } catch (e) {
@@ -61,14 +61,15 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: _key,
-      backgroundColor: Colors.red,
+      backgroundColor: Colors.blueGrey,
       body: Form(
         child: ListView(
           children: <Widget>[
             Padding(
               padding: const EdgeInsets.only(top: 72.0, bottom: 36.0),
               child: Icon(
-                Icons.rss_feed,
+                Icons.nature_people,
+
                 size: 180.0,
                 color: Colors.white,
               ),
@@ -96,7 +97,7 @@ class _LoginPageState extends State<LoginPage> {
                     padding: const EdgeInsets.symmetric(
                         vertical: 10.0, horizontal: 15.0),
                     child: Icon(
-                      Icons.alternate_email,
+                      Icons.email,
                       color: Colors.white,
                     ),
                   ),
@@ -205,7 +206,7 @@ class _LoginPageState extends State<LoginPage> {
                                 'LOGIN',
                                 textAlign: TextAlign.center,
                                 style: TextStyle(
-                                  color: Colors.red,
+                                  color: Colors.blueGrey,
                                 ),
                               ),
                             ),

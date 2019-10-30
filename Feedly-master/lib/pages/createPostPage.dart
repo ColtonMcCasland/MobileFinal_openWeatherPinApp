@@ -34,12 +34,18 @@ class _CreatePageState extends State<CreatePage> {
 
     DocumentReference ref;
 
+//model for posts
     try {
-      ref = await _firestore.collection('posts').add({
+
+
+      FirebaseUser user = await FirebaseAuth.instance.currentUser();
+
+      ref = await _firestore.collection( user.displayName ).add({
         'text': _postTextController.text.trim(),
         'owner_name': user_display_name,
         'owner': user_uid,
         'created': DateTime.now(),
+        'updated': true,
         'likes': {},
         'likes_count': 0,
         'comments_count': 0,
@@ -72,7 +78,8 @@ class _CreatePageState extends State<CreatePage> {
           Navigator.pop(context);
         },
       );
-    } catch (e) {
+    }
+    catch (e) {
       print('Exception Thrown: $e');
       _key.currentState.showSnackBar(SnackBar(
         content: Text(e.toString()),
@@ -91,7 +98,6 @@ class _CreatePageState extends State<CreatePage> {
                 leading: Icon(Icons.camera_alt),
                 title: Text('Camera'),
                 onTap: () async {
-                  // todo: use image_picker plugin
                   File image = await ImagePicker.pickImage(
                     source: ImageSource.camera,
                     maxHeight: 480,
@@ -109,7 +115,6 @@ class _CreatePageState extends State<CreatePage> {
                 leading: Icon(Icons.photo_album),
                 title: Text('Photo Album'),
                 onTap: () async {
-                  // todo: use image_picker plugin
                   File image = await ImagePicker.pickImage(
                     source: ImageSource.gallery,
                     maxHeight: 480,
@@ -165,7 +170,7 @@ class _CreatePageState extends State<CreatePage> {
               padding: const EdgeInsets.all(8.0),
               decoration: BoxDecoration(
                   border: Border.all(
-                color: Colors.red,
+                color: Colors.cyan,
               )),
               child: TextField(
                 controller: _postTextController,
@@ -186,8 +191,8 @@ class _CreatePageState extends State<CreatePage> {
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(30.0),
                       ),
-                      splashColor: Colors.red,
-                      color: Colors.red,
+                      splashColor: Colors.cyan,
+                      color: Colors.cyan,
                       onPressed: () {
                         _showModalBottomSheet();
                       },
@@ -220,8 +225,8 @@ class _CreatePageState extends State<CreatePage> {
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(30.0),
                       ),
-                      splashColor: Colors.red,
-                      color: Colors.red,
+                      splashColor: Colors.cyan,
+                      color: Colors.cyan,
                       onPressed: () {
                         _post();
                       },

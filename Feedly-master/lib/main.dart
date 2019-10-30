@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_feedly/pages/login.dart';
-import 'package:flutter_feedly/pages/signup.dart';
+import 'package:flutter_feedly/pages/loginPage.dart';
+import 'package:flutter_feedly/pages/signupPage.dart';
 
 void main() => runApp(MyApp());
 
